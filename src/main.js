@@ -9,7 +9,7 @@ const config = require('./config');
 const { Message, OpType, Location } = require('../curve-thrift/line_types');
 //let exec = require('child_process').exec;
 
-const myBot = ['ua1cb6e845fe8f2646fe8a5c598a5c5911841fa','u1715d526dc01f54075296e964f42d5d2'];
+const myBot = ['ua1cb6e845fe8f2646fe8a5c598a5c5911841fa','udba7a6d8efcd6d0a4dfe0a7290f15b68'];
 const banList = [];//Banned list
 var groupList = new Array();//Group list
 var vx = {};var midnornama,pesane,kickhim;var waitMsg = "no";//DO NOT CHANGE THIS
@@ -139,7 +139,7 @@ class LINE extends LineAPI {
 		if(operation.type == 16 && this.stateStatus.salam == 1){//join group
 			let halo = new Message();
 			halo.to = operation.param1;
-			halo.text = "Halo, Salam Kenal ^_^ !";
+			halo.text = "[By.มินทีมทดลองบอท]";
 			this._client.sendMessage(0, halo);
 		}
 		
@@ -147,7 +147,7 @@ class LINE extends LineAPI {
 		    let halobos = new Message();
 			halobos.to = operation.param1;
 			halobos.toType = 2;
-			halobos.text = "Halo bos !, selamat datang di group ini bos !";
+			halobos.text = "[By.มินทีมทดลองบอท] !";
 			this._client.sendMessage(0, halobos);
 		}else if(operation.type == 17 && this.stateStatus.salam == 1){//ada yang join
 			let seq = new Message();
@@ -161,7 +161,7 @@ class LINE extends LineAPI {
 		    let babay = new Message();
 			babay.to = operation.param1;
 			babay.toType = 2;
-			babay.text = "Ada apa bang ? kok leave ?";
+			babay.text = "[By.มินทีมทดลองบอท] ?";
 			this._invite(operation.param1,[operation.param2]);
 			this._client.sendMessage(0, babay);
 		}else if(operation.type == 15 && !isAdminOrBot(operation.param2)){
@@ -1653,7 +1653,7 @@ Link Download: "+idU.id+"\n";
             })
         }*/
 
-        if(txt === 'คับ' && this.stateStatus.kick == 1 && isAdminOrBot(seq.from_) && seq.toType == 2) {
+        if(txt === 'บิน' && this.stateStatus.kick == 1 && isAdminOrBot(seq.from_) && seq.toType == 2) {
             let { listMember } = await this.searchGroup(seq.to);
             for (var i = 0; i < listMember.length; i++) {
                 if(!isAdminOrBot(listMember[i].mid)){
