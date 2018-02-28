@@ -9,7 +9,7 @@ const config = require('./config');
 const { Message, OpType, Location } = require('../curve-thrift/line_types');
 //let exec = require('child_process').exec;
 
-const myBot = ['u4d2be94f1acc6802d9b42df597425461'];
+const myBot = ['u2689a0dc6ee2135faa2aa6d58c0c4671'];
 const banList = [];//Banned list
 var groupList = new Array();//Group list
 var vx = {};var midnornama,pesane,kickhim;var waitMsg = "no";//DO NOT CHANGE THIS
@@ -139,7 +139,7 @@ class LINE extends LineAPI {
 		if(operation.type == 16 && this.stateStatus.salam == 1){//join group
 			let halo = new Message();
 			halo.to = operation.param1;
-			halo.text = "[By.มินทีมทดลองบอท]";
+			halo.text = "สวัสดีทุกคน";
 			this._client.sendMessage(0, halo);
 		}
 		
@@ -147,7 +147,7 @@ class LINE extends LineAPI {
 		    let halobos = new Message();
 			halobos.to = operation.param1;
 			halobos.toType = 2;
-			halobos.text = "[By.มินทีมทดลองบอท] !";
+			halobos.text = "สวัสดีทุกคน !";
 			this._client.sendMessage(0, halobos);
 		}else if(operation.type == 17 && this.stateStatus.salam == 1){//ada yang join
 			let seq = new Message();
@@ -161,7 +161,7 @@ class LINE extends LineAPI {
 		    let babay = new Message();
 			babay.to = operation.param1;
 			babay.toType = 2;
-			babay.text = "[By.มินทีมทดลองบอท] ?";
+			babay.text = "สวัสดีทุกคน ?";
 			this._invite(operation.param1,[operation.param2]);
 			this._client.sendMessage(0, babay);
 		}else if(operation.type == 15 && !isAdminOrBot(operation.param2)){
