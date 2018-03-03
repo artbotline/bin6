@@ -55,7 +55,7 @@ class LineAPI {
     path: this.config.LINE_HTTP_URL,
     https: true
   }) {
-    options.headers['X-Line-Application'] = 'IOSIPAD\x097.14.0\x09iPhone_OS\x0910.12.0';
+    options.headers['X-Line-Application'] = 'CHROMEOS\t1.4.17\tChrome_OS\t1';
     this.options = options;
     this.connection =
       thrift.createHttpConnection(this.config.LINE_DOMAIN_3RD, 443, this.options);
@@ -119,7 +119,7 @@ class LineAPI {
                 this.options.headers['X-Line-Access'] = config.tokenn;
                 this.options.path = this.config.LINE_COMMAND_PATH;
                 this.setTHttpClient(this.options);
-			    this.options.headers['User-Agent'] = 'Line/6.0.0 iPad4,1 9.0.2';
+			    this.options.headers['User-Agent'] = 'Line/1.4.17 iPad4,1 9.0.2';
 			    this.axz = true;
 			    this.setTHttpClient(this.options);
 			    this.axz = false;
